@@ -21,6 +21,7 @@ treeMethods.contains = function(target) {
 		return true;
 	}
 
+
 	return _.reduce(this.children, function(acc, item) {
 		if (item.contains(target)) {
 			return true;
