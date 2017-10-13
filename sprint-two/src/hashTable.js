@@ -70,7 +70,7 @@ HashTable.prototype.remove = function(k) {
 	}
 };
 
-//Notes: Limited array looks like this: [[key, value], [key value], [[key, value], [colliding key, colliding value]]
+//Notes: Limited array looks like this: [[key, value], [key value], [[key, value], [colliding key, colliding value]]]
 // ^^ each tuple is associated with an index (produced by hashing function); 
 
 

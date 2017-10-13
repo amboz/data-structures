@@ -3,8 +3,7 @@ var Tree = function(value) {
   newTree.value = value;
   _.extend(newTree, treeMethods);
 
-  // your code here
-  newTree.children = [];  // fix me
+  newTree.children = [];
 
   return newTree;
 };
@@ -20,8 +19,6 @@ treeMethods.contains = function(target) {
 	if (this.value === target) {
 		return true;
 	}
-
-
 	return _.reduce(this.children, function(acc, item) {
 		if (item.contains(target)) {
 			return true;
