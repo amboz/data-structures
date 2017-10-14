@@ -7,28 +7,27 @@ var Queue = function() {
   // Implement the methods below
 
   someInstance.enqueue = function(value) {
-    var entries = Object.keys(storage).length;
-    storage[entries] = value;
-    return storage[entries];
+  	var enqueuedKey = Object.keys(storage).length;
+  	storage[enqueuedKey] = value;
+  	return storage[enqueuedKey];
   };
 
   someInstance.dequeue = function() {
-    var dequeued = storage[0];
-    delete storage[0];
-    
-    var tempStorage = {};
-    
-    for (var keys in storage) {
-      tempStorage[keys - 1] = storage[keys];
-    }
+  	var dequeued = storage[0];
+  	delete storage[0];
 
-    storage = tempStorage;
+  	var tempStorage = {};
+  	for (var key in storage) {
+  		tempStorage[key-1] = storage[key];
+  	}
 
-    return dequeued;
+  	storage = tempStorage
+
+  	return dequeued;
   };
 
   someInstance.size = function() {
-    return Object.keys(storage).length;
+  	return Object.keys(storage).length;
   };
 
   return someInstance;

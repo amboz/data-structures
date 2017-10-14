@@ -6,6 +6,10 @@ var Stack = function() {
 
   // Implement the methods below
   someInstance.push = function(value) {
+    var pushedKey = Object.keys(storage).length;
+    storage[pushedKey] = value;
+    return storage[pushedKey];
+  };
     var entries = Object.keys(storage).length;
     storage[entries] = value;
   };
