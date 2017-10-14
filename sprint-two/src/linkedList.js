@@ -46,9 +46,11 @@ var LinkedList = function() {
   	}
 
   	return output;
-    
+  };
+
   return list;
-};
+
+}
 
 
 var Node = function(value) {

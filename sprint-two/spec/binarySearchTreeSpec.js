@@ -37,4 +37,12 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+
+  it('should have left and right set to null for terminal nodes', function() {
+    binarySearchTree.insert(2);
+    binarySearchTree.insert(3);
+    binarySearchTree.insert(7);
+    expect(binarySearchTree.left.right.left).to.not.exist;
+    expect(binarySearchTree.left.right.right).to.not.exist;
+  });
 });

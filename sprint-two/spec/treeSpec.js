@@ -41,7 +41,7 @@ describe('tree', function() {
     expect(tree.contains(8)).to.equal(true);
   });
 
-    it('should correctly detect nested children, T/F', function() {
+  it('should correctly detect nested children, T/F', function() {
     tree.addChild(5);
     tree.addChild(6);
     tree.children[0].addChild(7);
@@ -49,4 +49,16 @@ describe('tree', function() {
     expect(tree.contains(7)).to.equal(true);
     expect(tree.contains(9)).to.equal(false);
   });
+
+  it('should not be able to be converted to a JSON string', function() {
+    tree.addChild(5);
+    tree.addChild(6);
+    tree.addChild(8);
+    tree.addChild(2);
+    tree.addChild(1);
+    tree.children[0].addChild(7);
+    tree.children[1].addChild(8);
+    expect(JSON.stringify(tree)).to.exist;
+  });
+
 });
