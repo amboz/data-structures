@@ -1,5 +1,5 @@
 var Stack = function() {
-  var someInstance = {};
+  var someInstance = {};  
 
   // Use an object with numeric keys to store values
   var storage = {};
@@ -10,15 +10,20 @@ var Stack = function() {
     storage[pushedKey] = value;
     return storage[pushedKey];
   };
+    var entries = Object.keys(storage).length;
+    storage[entries] = value;
+  };
 
   someInstance.pop = function() {
-    var popped = storage[Object.keys(storage).length - 1];
-    delete storage[Object.keys(storage).length - 1];
-    return popped;
+    var entries = Object.keys(storage).length;
+    var temp = storage[entries-1];
+    delete storage[entries-1];
+    return temp;
+
   };
 
   someInstance.size = function() {
-    return Object.keys(storage).length
+    return Object.keys(storage).length;
   };
 
   return someInstance;
